@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/scirpts/components/index/Index.vue'
-import Login from '@/scirpts/components/login/Login.vue'
-import List from '@/scirpts/components/list/List.vue'
-import Detail from '@/scirpts/components/details/Detail.vue'
+import Index from '@/scripts/components/Index.vue'
+import Home from '@/scripts/components/home/Home.vue'
+import List from '@/scripts/components/list/List.vue'
+import Detail from '@/scripts/components/detail/Detail.vue'
+import Login from '@/scripts/components/my/Login.vue'
+import Tabulation from '@/scripts/components/tabulation/Tabulation.vue'
+
 
 
 Vue.use(Router)
@@ -16,13 +19,13 @@ export default new Router({
       	component: Index,
       	children: [
             {
-        		path:'/tabulation',
-        		component: tabulation
+        		path:'/Tabulation',
+        		component: Tabulation
             },
-            {
-            	path:'/activity',
-        		component: activity
-            }，
+            // {
+            // 	path:'/activity',
+        	// 	component: activity
+            // },
             {
             	path:'/Login',
         		component: Login

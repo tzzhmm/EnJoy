@@ -1,13 +1,14 @@
-// 入口   引入到 mian.js内
 
 @charset "UTF-8";
 
 @import "./usage/core/reset";
 
-@import "./usage/module/m-common";
+@import "./usage/modules/common";
 
-@import "./usage/module/m-index";
+@import "./usage/modules/m-index";
 
-@import "./usage/module/m-list";
+@import "./usage/modules/m-list";
 
-@import "./usage/module/m-details";
+@import "./usage/modules/m-detail";
+
+@import "./usage/modules/m-login"

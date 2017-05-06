@@ -1,5 +1,5 @@
 <template>
-  <div class="m-details">
+  <div class="m-detail">
     <header>aaaa</header>
 
     <section></section>

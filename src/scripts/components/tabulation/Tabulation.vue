@@ -1,5 +1,5 @@
 <template>
-  <div class="m-login">
+  <div class="m-tabulation">
     <header>aaaa</header>
 
     <section></section>
