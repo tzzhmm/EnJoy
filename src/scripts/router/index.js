@@ -1,26 +1,44 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/scripts/components/index.vue'
-import Login from '@/scripts/components/login.vue'
+import Index from '@/scripts/components/Index.vue'
+import Home from '@/scripts/components/home/Home.vue'
+import List from '@/scripts/components/list/List.vue'
+import Detail from '@/scripts/components/detail/Detail.vue'
+import Login from '@/scripts/components/my/Login.vue'
+import Tabulation from '@/scripts/components/tabulation/Tabulation.vue'
+
+
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      component: Index,
-      redirect: 'index',
-      children: [
-        {
-          path: 'index',
-          component: Index
-        }
-      ]
+      	path: '/',
+      	name: 'Index',
+      	component: Index,
+      	children: [
+            {
+        		path:'/Tabulation',
+        		component: Tabulation
+            },
+            // {
+            // 	path:'/activity',
+        	// 	component: activity
+            // },
+            {
+            	path:'/Login',
+        		component: Login
+            }
+      	]
     },
     {
-      path: '/login',
-      component: Login
+		path:'/List',
+		component: List
+    },
+    {
+    	path:'/Detail',
+		component: Detail
     }
   ]
 })
