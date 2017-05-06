@@ -1,8 +1,8 @@
 {
-  "name": "tttenjoy",
+  "name": "douban",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "tzzhmm <tzzhmm@sina.com>",
+  "author": "lurongtao <lurongtao@126.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
