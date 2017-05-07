@@ -1,9 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div class="m-login">
-      aaaaa
-  </div>
-=======
     <div class="m-login">
       <p class="logo">
         <a href="/" class="v-link-active">
@@ -15,7 +10,6 @@
       <p></p>
       <p></p>
     </div>
->>>>>>> Archer
 </template>
 
 <script>
