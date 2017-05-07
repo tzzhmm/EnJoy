@@ -1,0 +1,21 @@
+
+.m-login{
+  width:100%;
+  height:100%;
+  padding: 0 .3rem;
+  display: inline-block;
+  .logo{
+    width:3.15rem;
+    height:.48rem;
+    text-align: center;
+    margin: .5rem 0;
+    a{
+      display: inline-block;
+      img{
+        width:1.5rem;
+        height:.45rem;
+        text-align: center;
+      }
+    }
+  }
+}
