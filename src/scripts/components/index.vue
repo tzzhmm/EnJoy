@@ -15,22 +15,25 @@
                         <div class="queue"><span>1</span>/8</div>
                     </div>
                     <div class="section_pic">
-                        <!-- <ul>
-                            <li>
-                                <img src="http://placehold.it/335x189" alt="">
-                                <p class="tips">今日主题</p>
-                                <p class="title">慵懒周末从这一份Brunch开始！</p>
-                                <p class="sub_title">想赖床又想吃好东西？来顿Brunch吧！</p>
-                            </li>
-                        </ul> -->
-                        <mt-swipe :auto="2000" :continuous="false">
+                        <mt-swipe :auto="0" :continuous="false">
                           <mt-swipe-item>
                               <img src="http://placehold.it/335x189" alt="">
                               <p class="tips">今日主题</p>
                               <p class="title">慵懒周末从这一份Brunch开始！</p>
                               <p class="sub_title">想赖床又想吃好东西？来顿Brunch吧！</p>
                           </mt-swipe-item>
-                        
+                          <mt-swipe-item>
+                              <img src="http://placehold.it/335x189" alt="">
+                              <p class="tips">今日主题</p>
+                              <p class="title">慵懒周末从这一份Brunch开始！</p>
+                              <p class="sub_title">想赖床又想吃好东西？来顿Brunch吧！</p>
+                          </mt-swipe-item>
+                          <mt-swipe-item>
+                              <img src="http://placehold.it/335x189" alt="">
+                              <p class="tips">今日主题</p>
+                              <p class="title">慵懒周末从这一份Brunch开始！</p>
+                              <p class="sub_title">想赖床又想吃好东西？来顿Brunch吧！</p>
+                          </mt-swipe-item>
                         </mt-swipe>
                     </div>
                 </div>
@@ -51,7 +54,7 @@
 <script>
     import Vue from 'vue'
     import { Swipe, SwipeItem } from 'mint-ui'
-
+    import "mint-ui/lib/style.css";
     Vue.component(Swipe.name, Swipe);
     Vue.component(SwipeItem.name, SwipeItem);
     export default{
