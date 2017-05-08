@@ -4,9 +4,13 @@
     <section>
         <div class="banner">
             <ul>
-                <li>
-                  <img src="https://image.ricebook.com/business/20462478223307?imageView2/2/w/750/h/421|watermark/1/image/aHR0cHM6Ly9kbi1pbWctc2VyaW91c2FwcHMucWJveC5tZS93bS5wbmc=/dissolve/100/gravity/SouthEast/ws/.1">
-                </li>
+              <mt-swipe :auto="2000">
+                <mt-swipe-item v-for="(item,index) in dataSource" :key="index">
+                  <li>
+                    <img :src="item.images.large" alt="">
+                  </li>
+                </mt-swipe-item>
+              </mt-swipe>
             </ul>
         </div>
         <div>
@@ -211,12 +215,41 @@
             </div>
             <div class="info fade-vertical-transition" style="display:none;"></div>
         </div>
-        <div class="sub-btn"></div>
+        <div class="sub-btn">
+            <a class="confirm fade-transition" style="display:none;">确定</a>
+            <div class="cart fade-transition">
+              <span class="yo-ico">&#xe608</span>
+              <i class="tip"></i>
+            </div>
+            <a class="add-cart fade-transition on">加入购物车</a>
+            <a class="fade-transition pay on">即刻购买</a>
+        </div>
     </nav>
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
+  import {Swipe, SwipeItem}from 'mint-ui'
+  import 'mint-ui/lib/style.css'
+  Vue.component(Swipe.name,Swipe)
+  Vue.component(SwipeItem.name,SwipeItem)
+  import utilAxios from '../../utils/axios'
   export default {
+    data(){
+      return{
+        dataSource:[]
+      }
+    },
+    mounted:function(){
+      let that = this
+      utilAxios.get({
+        url:'/api/v2/movie/in_theaters?count=10',
+        method:'get',
+        callback:function(res){
+          that.dataSource = that.dataSource.concat(res.data.subjects)
+        }
+      })
+    }
   }
 </script>
