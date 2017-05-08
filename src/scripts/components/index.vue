@@ -1,63 +1,64 @@
 <template>
     <div class="m-index">
-        <header class="yo-header yo-header-a">
-            <h2 class="title"><img src="/static/images/Header/logo.jpg" alt=""><span>北京</span></h2>
-            <span class="regret"></span>
-            <span class="affirm yo-ico">&#xf067;</span>
-        </header>
+        <Header />
         <section>
-            <!-- <router-view></router-view> -->
-            <div>
-                <div class="section_title">
-                    <div class="section_title_content">
-                        <p class="title">今日推荐</p>
-                        <p class="sub_title">每天告诉你大家爱吃的和最近值得吃的</p>
-                        <div class="queue"><span>1</span>/8</div>
-                    </div>
-                    <div class="section_pic">
-                        <mt-swipe :auto="0" :continuous="false">
-                          <mt-swipe-item>
-                              <img src="http://placehold.it/335x189" alt="">
-                              <p class="tips">今日主题</p>
-                              <p class="title">慵懒周末从这一份Brunch开始！</p>
-                              <p class="sub_title">想赖床又想吃好东西？来顿Brunch吧！</p>
-                          </mt-swipe-item>
-                          <mt-swipe-item>
-                              <img src="http://placehold.it/335x189" alt="">
-                              <p class="tips">今日主题</p>
-                              <p class="title">慵懒周末从这一份Brunch开始！</p>
-                              <p class="sub_title">想赖床又想吃好东西？来顿Brunch吧！</p>
-                          </mt-swipe-item>
-                          <mt-swipe-item>
-                              <img src="http://placehold.it/335x189" alt="">
-                              <p class="tips">今日主题</p>
-                              <p class="title">慵懒周末从这一份Brunch开始！</p>
-                              <p class="sub_title">想赖床又想吃好东西？来顿Brunch吧！</p>
-                          </mt-swipe-item>
-                        </mt-swipe>
-                    </div>
-                </div>
-            </div>
+            <router-view></router-view>
         </section>
-        <nav>
-            <ul>
-                <li class="yo-i"><span class="yo-ico">&#xe656;</span><p>精选</p></li>
-                <li><span class="yo-ico">&#xe621;</span><p>分类</p></li>
-                <li><span class="yo-ico">&#xe67a;</span><p>杂志</p></li>
-                <li><span class="yo-ico">&#xe6f8;</span><p>购物车</p></li>
-                <li><span class="yo-ico">&#xe602;</span><p>我的</p></li>
-            </ul>
-        </nav>
+        <Nav />
     </div>
 </template>
 
 <script>
     import Vue from 'vue'
-    import { Swipe, SwipeItem } from 'mint-ui'
-    import "mint-ui/lib/style.css";
-    Vue.component(Swipe.name, Swipe);
-    Vue.component(SwipeItem.name, SwipeItem);
+    import Header from './Header'
+    import Nav from './Nav'
+    Vue.component('Header',Header)
+    Vue.component('Nav',Nav)
     export default{
 
     }
+/*
+    import axios from 'axios'
+    export default{    //  就相当于 new Vue   是 ES6 的语法
+        mounted:function(){
+            let that=this;
+            // console.log(0)
+            // console.log(axios)
+            // mock 数据 json-server,使用假数据，在 static 中建mock文件夹，内建mock.js  weiper.json
+            // 在mock.js内写
+            data(){
+                return{
+                    dataSource:[]    // 默认是个空数组
+                }
+            },
+            axios.({
+                method:'get',
+                url:''
+            })
+            .then(function(res){
+                // console.log(res)
+                this. dataSource=that.dataSource.concat(res.data.subjects)
+            })
+        }    这是完毕后 在 需要的地方引入 :src="item.images.图片的路径"
+        然后抽离axios 在utils下面
+    }*/
+
+/*  // 抽离完后再写
+    export default {
+        data(){
+            return {
+                dataSource:[]
+            }
+        },
+        mounted:function(){
+            let that = this
+            utilAxios.get({
+                url:'http://loacalhost:9000/swiper',
+                method:'get',
+                callback:function(res){
+                    this. dataSource = that.dataSource.concat(res.data.subjects)
+                }
+            })
+        }
+    }  */
 </script>

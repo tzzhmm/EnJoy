@@ -19,9 +19,17 @@ export default new Router({
       	component: Index,
       	children: [
             {
-                path:'/Tabulation',
-                component: Tabulation
+                path:'Home',
+                component: Home
+            },
+            {
+        		path:'/Tabulation',
+        		component: Tabulation
             }
+            // {
+            // 	path:'/Activity',
+        	// 	component: Activity
+            // }
       	]
     },
     {
