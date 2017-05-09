@@ -1,3 +1,58 @@
+@import "../fragment/yo-search";
+
+@include yo-search(
+  $name: a,
+  $cancel-color: #333,
+  $bgcolor:#fff,
+  $input-height:.36rem,
+  $input-bgcolor:#f2f3f4
+){
+  position:absolute;
+  top:.39rem;
+  width:100%;
+  padding:.075rem .15rem;
+  z-index:99;
+  height: .55rem !important;
+  border-radius:none;
+};
+.btn{
+  font-size:.15rem;
+  background:#fff;
+  width:.45rem;
+  height:.4rem;
+  text-align:right;
+
+}
+.mint-popup{
+  width:100%;
+  background:transparent;
+}
+@import "../fragment/yo-header";
+@include yo-header(
+    $name:a,
+    $bgcolor:#fff,
+    $item-ico-color:#000,
+    $height:.38rem,
+    $border-color:#ccc,
+    $item-ico-size:.2rem
+){
+    @include border(0 0 1px 0,#ccc,solid);
+
+    .title{
+        height:100%;
+        img{
+            width:.75rem;
+            height:.22rem;
+            display: inline-block;
+        }
+        span{
+            color: #000;
+            font-size: .12rem;
+        }
+    }
+}
+
+
 ul{
   list-style:none;
   margin:0;
@@ -9,36 +64,24 @@ ul{
   @include flexbox();
   @include flex-direction(column);
   header{
-    height:.44rem;
-    width:100%;
-    background:#000;
+    // height:.44rem;
+    // width:100%;
+    // background:#000;
   }
   section{
     overflow-y: scroll;
     @include flex();
     width:100%;
-    background:#b6b6b6;
     .banner{
       width:100%;
       height:2.5rem;
       overflow:hidden;
       position:relative;
       background-color:#eee;
-      ul{
-        height:100%;
-        width:100%;
-        list-style:none;
-        @include flexbox();
-        li{
-          width:100%;
-          height:100%;
-          overflow:hidden;
           img{
             width:100%;
             height:100%;
           }
-        }
-      }
     }
     .info{
       background-color:#fff;
@@ -148,6 +191,12 @@ ul{
         border-top:.03rem solid #e0e0e0;
         display: block;
       }
+      .title{
+        padding:.375rem 0 .15rem;
+        font-size:.18rem;
+        color:#2c3038;
+        @include border(0 0 1px 0,#e6e6e6,solid);
+      }
       .menu-table{
         width:3.45rem;
         margin-top:.25rem;
@@ -159,11 +208,25 @@ ul{
           color:#63666b;
           font-size:.13rem;
           padding:.18rem 0;
+          span.yo-ico{
+            font-size:.19rem!important;
+            color:#000!important;
+          }
           span{
             display:inline-block;
-            vertical-align: middle;
-            line-height: .18rem;
+            vertical-align: top;
+            line-height:.18rem;
+            margin-left:.15rem;
           }
+          span.value{
+            width:2.8rem;
+            margin-right:0;
+            font-size:.15rem;
+            white-space: nowrap;
+            overflow:hidden;
+            text-overflow: ellipsis;
+          }
+
           .key{
             width:.95rem;
             margin-right:.25rem;
@@ -180,6 +243,43 @@ ul{
       height:.08rem;
       background-color:#fafafa;
       @include border(1px 0 1px 0,#e6e6e6,solid);
+    }
+    div{
+      #menu{
+        background-color:#fff;
+        padding:.25rem .2rem .15rem;
+        .card-title{
+          position:relative;
+          font-size:.16rem;
+          font-weight:bolder;
+          line-height: 1;
+          text-align: center;
+          color:#2c3038;
+          display:block;
+          margin-bottom:.12rem;
+        }
+        .menu-list{
+          margin-bottom:.1rem;
+          .menu-item{
+            p{
+              font-size:.15rem;
+              line-height:1.6;
+              text-align:center;
+              color:#76797e;
+              &.sub-title{
+                margin-top:.25rem;
+                color:#21242a
+              }
+            }
+          }
+        }
+      }
+      .panel-gap{
+        width:100%;
+        height:.08rem;
+        background-color:#fafafa;
+        @include border(1px 0 1px 0,#e6e6e6,solid);
+      }
     }
     div{
       #detail{

@@ -1,27 +1,40 @@
 <template>
-  <div class="m-detail">
-    <header></header>
+  <div class="m-detail" v-if="dataF">
+    <header class="yo-header yo-header-a">
+        <h2 class="title"><img src="/static/images/Header/logo.jpg" alt=""><span>北京</span></h2>
+        <span class="regret"></span>
+        <span class="affirm yo-ico">&#xf067;</span>
+
+    </header>
     <section>
+      <!-- <mt-popup
+        v-model="popupVisible" closeOnClickModal="true"
+        position="top"> -->
+        <div class="yo-search yo-search-a" style="display:none;">
+          <label class="action">
+              <span class="yo-ico"></span>
+              <input type="text" @keyup.enter="search" v-model="keywords" class="input input-shrink" placeholder="输入搜索关键字...">
+          </label>
+        <span class="btn" @click="cancel">搜索</span>
+      </div>
+      <!-- </mt-popup> -->
+
         <div class="banner">
-            <ul>
               <mt-swipe :auto="2000">
                 <mt-swipe-item v-for="(item,index) in dataSource" :key="index">
-                  <li>
-                    <img :src="item.images.large" alt="">
-                  </li>
+                    <img :src="item.img_url" alt="">
                 </mt-swipe-item>
               </mt-swipe>
-            </ul>
         </div>
         <div>
           <div class="info">
               <div class="info-title">
                   <p class="title">
-                    Toshi Yoroizuka Beijing 招牌甜品礼盒
+                    {{dataF.name}}
                   </p>
-                  <p class="desc">来自日本的甜品界头牌</p>
+                  <p class="desc">{{dataF.description}}</p>
                   <p class="price">
-                    <span class="r-price">120</span>
+                    <span class="r-price">{{dataF.price/100}}</span>
                     <span class="unit">元</span>
                     <span class="entity">
                       /
@@ -29,7 +42,7 @@
                     </span>
                     <span class="o-price">
                       ¥
-                      136
+                      {{dataF.origin_price/100}}
                     </span>
                     <span class="status">
                       <span class="gap"></span>
@@ -49,36 +62,49 @@
         <div>
           <div id="express-menu">
               <h3 class="card-title">商品详情</h3>
+              <div class="title">{{detail.restaurant_name}}</div>
               <ul class="menu-table">
                 <li>
-                  <span class="key">礼盒内容</span>
-                  <span class="value">脆皮泡芙（3枚）</span>
+                  <span class="yo-ico">&#xe640;</span>
+                  <span class="value">{{detail.restaurant_address}}</span>
                 </li>
                 <li>
-                  <span class="key">ENJOY 独享礼遇</span>
-                  <span class="value">经典香橙玛德莲（1份）</span>
+                  <span class="yo-ico">&#xe61d;</span>
+                  <span class="value">{{detail.restaurant_phone_numbers[0]}}</span>
                 </li>
               </ul>
           </div>
           <div class="panel-gap"></div>
         </div>
+        <div>
+          <div id="menu">
+            <h3 class="card-title">MENU</h3>
+            <div class="menu-list" v-for="(item,index) in menu" :key="index">
+              <div class="menu-item clearfix">
+                <p class="sub-title">-{{item.sub_title}}-</p>
+                <p> {{item.text[0]}} </p>
+                <p> {{item.text[1]}} </p>
+                <p> {{item.text[2]}} </p>
+                <p> {{item.text[3]}} </p>
+                <p> {{item.text[4]}} </p>
+                <p> {{item.text[5]}} </p>
+              </div>
+
+            </div>
+          </div>
+        <div class="panel-gap"></div>
+      </div>
         <div product-type="1">
             <div id="detail">
                 <h3 class="card-title">亮点</h3>
-                <div class="detail-item">
-                    <img src="https://image.ricebook.com/business/20247013723770?imageView2/2/w/670/h/446|watermark/1/image/aHR0cHM6Ly9kbi1pbWctc2VyaW91c2FwcHMucWJveC5tZS93bS5wbmc=/dissolve/100/gravity/SouthEast/ws/.1" alt="" style="width:3.35rem; height：2.23rem">
-                    <p class="sub-title">日本家喻户晓的「甜品界头牌」荣耀开启海外首店</p>
+                <div class="detail-item" v-for="(item,index) in light" :key="index">
+                    <img :src="item.img_url" alt="" style="width:3.35rem; height：2.23rem">
+                    <p class="sub-title">{{item.title}}</p>
                     <p class="content">
-                        日本甜品界头牌 Toshi Yoroizuka 于今年6月落户亮马桥官舍，这家由欧洲米其林三星餐厅甜品主厨铠冢俊彦一手创办的甜品店，名气早已响彻日本。Toshi Yoroizuka Beijing 作为海外首店，由铠冢俊彦派来当家徒弟南里英伸前来坐镇，这位同样资历丰厚的甜品师，曾于法国学习甜品制作多年，并先后于多个知名甜品店担任主厨。如今，南里英伸将带着他的满腔热情在北京续写本店的甜品传奇。
+                        {{item.content}}
                     </p>
                 </div>
-                <div class="detail-item">
-                  <img src="https://image.ricebook.com/business/20247010523768?imageView2/2/w/670/h/446|watermark/1/image/aHR0cHM6Ly9kbi1pbWctc2VyaW91c2FwcHMucWJveC5tZS93bS5wbmc=/dissolve/100/gravity/SouthEast/ws/.1" alt="" style="width:3.35rem; height：2.23rem">
-                  <p class="sub-title">经典甜品送到家 ENJOY 独享89折起</p>
-                  <p class="content">
-                      TOSHI 招牌甜品礼盒，除了最经典的「奶油瑞士卷」，「抹茶」「草莓」「巧克力」也在你的备选单之列，更有「脆皮泡芙」，榛子巧克力与香橙巧克力口味的「磅蛋糕」可选。经典又精美的 TOSHI 礼盒，是你送礼分享的甜蜜之选。北京五环内包邮可送，同时支持到店自提，ENJOY 独享89折起。
-                  </p>
-                </div>
+
             </div>
             <div class="panel-gap"></div>
         </div>
@@ -86,12 +112,10 @@
             <div id="tips">
                 <h3 class="card-title">使用提示</h3>
                 <ul class="tips-list">
-                    <li>
-                        送货范围：北京城区五环内可送，具体请致电商家询问；
+                    <li v-for="(item,index) in tip" :key="index">
+                        {{item.text}}
                     </li>
-                    <li>
-                        关于快递：黑衣人；
-                    </li>
+
                 </ul>
                 <p class="fold">
                     更多补充说明
@@ -115,84 +139,20 @@
                     猜你喜欢
                 </h3>
                 <ul class="like-list">
-                    <li>
+                    <li v-for="(item,index) in like" :key="index" id="item.product_id">
                         <a href="/product/1032519" class="full-link"></a>
-                        <img src="https://image.ricebook.com/business/19987196623778?imageView2/1/w/320/h/213|watermark/1/image/aHR0cHM6Ly9kbi1pbWctc2VyaW91c2FwcHMucWJveC5tZS93bS5wbmc=/dissolve/100/gravity/SouthEast/ws/.1" style="width:1.6rem; height:1.065rem;" alt="">
+                        <img :src="item.product_image_url" style="width:1.6rem; height:1.065rem;" alt="">
                         <div class="desc">
-                            <p class="sub-title">尚水长廊铁板烧餐厅 （三里屯太古里店）春季午间套餐</p>
+                            <p class="sub-title">{{item.product_name}}</p>
                             <p class="price">
-                                <span>158
+                                <span>{{item.price/100}}
                                   元/
                                   位
                                 </span>
                             </p>
                         </div>
                     </li>
-                    <li>
-                        <a href="/product/1032519" class="full-link"></a>
-                        <img src="https://image.ricebook.com/business/19987196623778?imageView2/1/w/320/h/213|watermark/1/image/aHR0cHM6Ly9kbi1pbWctc2VyaW91c2FwcHMucWJveC5tZS93bS5wbmc=/dissolve/100/gravity/SouthEast/ws/.1" style="width:1.6rem; height:1.065rem;" alt="">
-                        <div class="desc">
-                            <p class="sub-title">尚水长廊铁板烧餐厅 （三里屯太古里店）春季午间套餐</p>
-                            <p class="price">
-                                <span>158
-                                  元/
-                                  位
-                                </span>
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="/product/1032519" class="full-link"></a>
-                        <img src="https://image.ricebook.com/business/19987196623778?imageView2/1/w/320/h/213|watermark/1/image/aHR0cHM6Ly9kbi1pbWctc2VyaW91c2FwcHMucWJveC5tZS93bS5wbmc=/dissolve/100/gravity/SouthEast/ws/.1" style="width:1.6rem; height:1.065rem;" alt="">
-                        <div class="desc">
-                            <p class="sub-title">尚水长廊铁板烧餐厅 （三里屯太古里店）春季午间套餐</p>
-                            <p class="price">
-                                <span>158
-                                  元/
-                                  位
-                                </span>
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="/product/1032519" class="full-link"></a>
-                        <img src="https://image.ricebook.com/business/19987196623778?imageView2/1/w/320/h/213|watermark/1/image/aHR0cHM6Ly9kbi1pbWctc2VyaW91c2FwcHMucWJveC5tZS93bS5wbmc=/dissolve/100/gravity/SouthEast/ws/.1" style="width:1.6rem; height:1.065rem;" alt="">
-                        <div class="desc">
-                            <p class="sub-title">尚水长廊铁板烧餐厅 （三里屯太古里店）春季午间套餐</p>
-                            <p class="price">
-                                <span>158
-                                  元/
-                                  位
-                                </span>
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="/product/1032519" class="full-link"></a>
-                        <img src="https://image.ricebook.com/business/19987196623778?imageView2/1/w/320/h/213|watermark/1/image/aHR0cHM6Ly9kbi1pbWctc2VyaW91c2FwcHMucWJveC5tZS93bS5wbmc=/dissolve/100/gravity/SouthEast/ws/.1" style="width:1.6rem; height:1.065rem;" alt="">
-                        <div class="desc">
-                            <p class="sub-title">尚水长廊铁板烧餐厅 （三里屯太古里店）春季午间套餐</p>
-                            <p class="price">
-                                <span>158
-                                  元/
-                                  位
-                                </span>
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="/product/1032519" class="full-link"></a>
-                        <img src="https://image.ricebook.com/business/19987196623778?imageView2/1/w/320/h/213|watermark/1/image/aHR0cHM6Ly9kbi1pbWctc2VyaW91c2FwcHMucWJveC5tZS93bS5wbmc=/dissolve/100/gravity/SouthEast/ws/.1" style="width:1.6rem; height:1.065rem;" alt="">
-                        <div class="desc">
-                            <p class="sub-title">尚水长廊铁板烧餐厅 （三里屯太古里店）春季午间套餐</p>
-                            <p class="price">
-                                <span>158
-                                  元/
-                                  位
-                                </span>
-                            </p>
-                        </div>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -231,6 +191,8 @@
 <script>
   import Vue from 'vue'
   import {Swipe, SwipeItem}from 'mint-ui'
+  import {Popup} from 'mint-ui'
+  Vue.component(Popup.name,Popup)
   import 'mint-ui/lib/style.css'
   Vue.component(Swipe.name,Swipe)
   Vue.component(SwipeItem.name,SwipeItem)
@@ -238,16 +200,34 @@
   export default {
     data(){
       return{
-        dataSource:[]
+        dataSource:[],
+        dataF:null,
+        detail:'',
+        menu:[],
+        light:[],
+        tip:[],
+        like:[],
+        popupVisible:''
       }
     },
     mounted:function(){
       let that = this
+
       utilAxios.get({
-        url:'/api/v2/movie/in_theaters?count=10',
+
+        url:`/api/product/info/product_detail.json?product_id=${this.$route.params.id}`,
+        // url:"https://api.ricebook.com/product/info/product_detail.json?product_id=1003137",
         method:'get',
         callback:function(res){
-          that.dataSource = that.dataSource.concat(res.data.subjects)
+          // console.log(res.data.modules)
+          console.log(res.data.modules[4].data.recommend)
+          that.dataSource = that.dataSource.concat(res.data.basic.product_images);
+          that.dataF =res.data.basic;
+          that.detail=res.data.modules[0].data.restaurants[0];
+          that.menu= res.data.modules[1].data.contents;
+          that.light = res.data.modules[2].data.lights;
+          that.tip = res.data.modules[3].data.contents;
+          that.like = res.data.modules[4].data.recommend
         }
       })
     }
