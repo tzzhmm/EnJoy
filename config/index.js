@@ -29,7 +29,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'https://api.ricebook.com/',
+        target: 'https://api.ricebook.com',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

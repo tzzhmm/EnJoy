@@ -56,9 +56,9 @@
                     <div class="activity">本周上架10款精品，10款新品</div>
                     <div class="more">查看更多</div>
                     <ul>
-                        <li v-for="(item,index) in dataAlcohol" :key="index">
+                        <router-link tag="li" :key="index" v-for="(item,index) in dataAlcohol"  :to="`/Detail/${item.id}`" >
                             <img lazy="loaded" :src="item.url"/>
-                        </li>
+                        </router-link>
                     </ul>
                 </div>
             </div>
