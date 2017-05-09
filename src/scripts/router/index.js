@@ -7,6 +7,7 @@ import Detail from '@/scripts/components/detail/Detail.vue'
 import Login from '@/scripts/components/my/Login.vue'
 import Tabulation from '@/scripts/components/tabulation/Tabulation.vue'
 import Search from '@/scripts/components/search/Search.vue'
+import User from '@/scripts/components/my/User.vue'
 
 
 
@@ -36,6 +37,11 @@ export default new Router({
     {
         path:'/Login',
         component: Login
+
+    },
+    {
+      path:'/User',
+      component:User
     },
     {
 		path:'/List',
