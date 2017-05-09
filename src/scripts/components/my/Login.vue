@@ -8,9 +8,18 @@
       <p class="phone">
         <input type="text" name="" placeholder="手机号">
       </p>
-      <p></p>
-      <p></p>
-      <p></p>
+      <p class="totp">
+        <input type="text" name="" placeholder="短信验证码">
+        <span>X</span>
+        <a>获取验证码</a>
+      </p>
+      <a class="go">登录</a>
+      <div class="tips">
+        <p>未注册的用户登录后自动创建账户</p>
+        <p> 登录即表示您同意
+          <a href="https://topic.ricebook.com/topicpage/agreement.html">用户协议</a>
+        </p>
+      </div>
     </div>
 </template>
 
