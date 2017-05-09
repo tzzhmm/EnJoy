@@ -1,6 +1,6 @@
 <template>
-  <div class="m-tabulation">
-    <header>tabulation</header>
+  <div class="m-shopping">
+    <header>shopping</header>
 
     <section></section>
 
