@@ -20,17 +20,14 @@ export default new Router({
       	component: Index,
       	children: [
             {
-                path:'Home',
+                path:'/Home',
                 component: Home
             },
             {
         		path:'/Tabulation',
         		component: Tabulation
             }
-            // {
-            // 	path:'/Activity',
-        	// 	component: Activity
-            // }
+
       	]
     },
     {
@@ -44,10 +41,10 @@ export default new Router({
     {
     	path:'/Detail/:id',
 		  component: Detail
-  },
-  {
-    path:'/Search',
-    component:Search
-  }
-  ]
-})
+    },
+    {
+      path:'/Search',
+      component:Search
+    }
+    ]
+  })
