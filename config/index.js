@@ -24,12 +24,12 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     port: 8080,
-    autoOpenBrowser: true,
+    autoOpenBrowser: false,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'https://api.ricebook.com',
+        target: 'https://api.ricebook.com/',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

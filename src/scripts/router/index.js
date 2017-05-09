@@ -6,6 +6,7 @@ import List from '@/scripts/components/list/List.vue'
 import Detail from '@/scripts/components/detail/Detail.vue'
 import Login from '@/scripts/components/my/Login.vue'
 import Tabulation from '@/scripts/components/tabulation/Tabulation.vue'
+import Search from '@/scripts/components/search/Search.vue'
 
 
 
@@ -41,8 +42,12 @@ export default new Router({
 		component: List
     },
     {
-    	path:'/Detail',
-		component: Detail
-    }
+    	path:'/Detail/:id',
+		  component: Detail
+  },
+  {
+    path:'/Search',
+    component:Search
+  }
   ]
 })
