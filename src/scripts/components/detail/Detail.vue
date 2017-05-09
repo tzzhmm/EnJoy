@@ -1,11 +1,6 @@
 <template>
   <div class="m-detail" v-if="dataF">
-    <header class="yo-header yo-header-a">
-        <h2 class="title"><img src="/static/images/Header/logo.jpg" alt=""><span>北京</span></h2>
-        <span class="regret"></span>
-        <span class="affirm yo-ico">&#xf067;</span>
-
-    </header>
+    <Header />
     <section>
       <!-- <mt-popup
         v-model="popupVisible" closeOnClickModal="true"
@@ -178,7 +173,7 @@
         <div class="sub-btn">
             <a class="confirm fade-transition" style="display:none;">确定</a>
             <div class="cart fade-transition">
-              <span class="yo-ico">&#xe608</span>
+              <span class="yo-ico">&#xe608;</span>
               <i class="tip"></i>
             </div>
             <a class="add-cart fade-transition on">加入购物车</a>
@@ -190,6 +185,8 @@
 
 <script>
   import Vue from 'vue'
+  import Header from '../Header'
+  Vue.component('Header',Header)
   import {Swipe, SwipeItem}from 'mint-ui'
   import {Popup} from 'mint-ui'
   Vue.component(Popup.name,Popup)

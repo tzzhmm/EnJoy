@@ -1,34 +1,3 @@
-// .mint-popup{
-//   @include yo-search(
-//     $name: a,
-//     $cancel-color: #333,
-//     $bgcolor:#fff,
-//     $input-height:.36rem,
-//     $input-bgcolor:#f2f3f4
-//   ){
-//     position:absolute;
-//     top:.39rem;
-//     width:100%;
-//     padding:.075rem .15rem;
-//     z-index:999;
-//     height:.55rem !important;
-//     border-radius:none;
-//   };
-//   .btn{
-//     font-size:.15rem;
-//     background:#fff;
-//     width:.45rem;
-//     height:.4rem;
-//     text-align:right;
-//
-//   }
-//   .mint-popup{
-//     width:100%;
-//     // background:transparent;
-//   }
-// }
-
-
 
 @import "../fragment/yo-search";
 
@@ -40,35 +9,12 @@
   height: .44rem !important;
   padding-bottom:.2rem;
 };
-@import "../fragment/yo-header";
 .m-search{
   width:100%;
   height:100%;
   background:#fff;
   @include flexbox();
   @include flex-direction(column);
-    @include yo-header(
-        $name:a,
-        $bgcolor:#fff,
-        $item-ico-color:#000,
-        $height:.39rem,
-        $border-color:#ccc,
-        $item-ico-size:.2rem
-    ){
-        @include border(0 0 1px 0,#ccc,solid);
-        .title{
-            height:100%;
-            img{
-                width:.75rem;
-                height:.22rem;
-                display: inline-block;
-            }
-            span{
-                color: #000;
-                font-size: .12rem;
-            }
-        }
-    }
   section{
     overflow-y: scroll;
     width:100% !important;

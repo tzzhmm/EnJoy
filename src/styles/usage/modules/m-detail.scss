@@ -23,34 +23,7 @@
   text-align:right;
 
 }
-.mint-popup{
-  width:100%;
-  background:transparent;
-}
-@import "../fragment/yo-header";
-@include yo-header(
-    $name:a,
-    $bgcolor:#fff,
-    $item-ico-color:#000,
-    $height:.38rem,
-    $border-color:#ccc,
-    $item-ico-size:.2rem
-){
-    @include border(0 0 1px 0,#ccc,solid);
 
-    .title{
-        height:100%;
-        img{
-            width:.75rem;
-            height:.22rem;
-            display: inline-block;
-        }
-        span{
-            color: #000;
-            font-size: .12rem;
-        }
-    }
-}
 
 
 ul{
@@ -64,9 +37,7 @@ ul{
   @include flexbox();
   @include flex-direction(column);
   header{
-    // height:.44rem;
-    // width:100%;
-    // background:#000;
+
   }
   section{
     overflow-y: scroll;

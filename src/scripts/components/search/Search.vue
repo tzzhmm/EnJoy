@@ -1,10 +1,6 @@
 <template >
     <div class="m-search">
-        <header class="yo-header yo-header-a">
-            <h2 class="title"><img src="/static/images/Header/logo.jpg" alt=""><span>北京</span></h2>
-            <span class="regret"></span>
-            <span class="affirm yo-ico">&#xf067;</span>
-        </header>
+        <Header />
         <section>
           <div class="yo-search yo-search-a">
           <label class="action">
@@ -52,6 +48,8 @@
     </div>
 </template>
 <script>
+  import Header from '../Header'
+  Vue.component('Header',Header)
   import Vue from 'vue'
   import {Indicator} from 'mint-ui';
   import utilAxios from '../../utils/axios'
