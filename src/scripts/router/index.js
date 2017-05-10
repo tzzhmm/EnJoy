@@ -49,7 +49,7 @@ export default new Router({
 		component: List
     },
     {
-    	path:'/Detail/:id',
+    	path:'/Detail/:type',
 		  component: Detail
   },
   {
