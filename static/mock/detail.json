@@ -1,0 +1,346 @@
+{
+  "modules": [
+    {
+      "compatibility_policy": {
+        "alert_message": "当前应用版本太低",
+        "policy": "alert"
+      },
+      "data": {
+        "restaurants": [
+          {
+            "area_id": 1925,
+            "area_name": "东四",
+            "city_id": 0,
+            "enjoy_url": "enjoyapp://restaurant/profile?id=11666548",
+            "latitude": 39.9334602355957,
+            "license": {
+              "enjoy_url": "https://topic.ricebook.com/topicpage/product_licence.html?restaurant_id=11666548",
+              "icon": "https://image.ricebook.com/business/18915887513738",
+              "text": "营业许可资质"
+            },
+            "longitude": 116.42057800292969,
+            "price_number": 0,
+            "restaurant_address": "东城区东四十条96号",
+            "restaurant_id": 11666548,
+            "restaurant_image": [
+              {
+                "img_url": "https://image.ricebook.com/business/20055964323680",
+                "special_show": false
+              },
+              {
+                "img_url": "https://image.ricebook.com/business/18698183113032",
+                "special_show": false
+              },
+              {
+                "img_url": "https://image.ricebook.com/business/18698183123290",
+                "special_show": false
+              }
+            ],
+            "restaurant_name": "To My Dearest 法式甜品",
+            "restaurant_phone_numbers": [
+              "010-64019980"
+            ],
+            "state": 0
+          }
+        ]
+      },
+      "id": 5,
+      "index": 1
+    },
+    {
+      "compatibility_policy": {
+        "alert_message": "当前应用版本太低",
+        "policy": "alert"
+      },
+      "data": {
+        "contents": [
+          {
+            "sub_title": "甜品",
+            "text": [
+              "亲爱的茉莉（固定搭配）",
+              "（以下4选2）",
+              "less is more",
+              "提拉米苏",
+              "玫瑰小姐",
+              "温莎公爵夫人"
+            ]
+          },
+          {
+            "sub_title": "饮品",
+            "text": [
+              "（3选2）",
+              "玫瑰荔枝气泡水",
+              "白桃气泡水",
+              "拿铁咖啡"
+            ]
+          }
+        ]
+      },
+      "id": 6,
+      "index": 2
+    },
+    {
+      "compatibility_policy": {
+        "alert_message": "当前应用版本太低",
+        "policy": "alert"
+      },
+      "data": {
+        "lights": [
+          {
+            "content": "层次丰富的「亲爱的茉莉」，是这次组合的必尝项目，轻柔的茶香结合慕斯口感，回味无穷。再在「less is more」「提拉米苏」「玫瑰小姐」与「温莎公爵夫人」中任选2款与之相搭，打造你“最亲爱的”浪漫体验。",
+            "img_url": "https://image.ricebook.com/business/20462486123329",
+            "title": "“亲爱的茉莉”与招牌精选 人气产品的集结回归"
+          },
+          {
+            "content": "To My Dearest 优雅地坐落在东四十条街道旁。金铜色门帘与玻璃打造的外墙格外引人注目，由专门设计师打造的独栋小舍，从外观到细节处处动人——还原法国当代艺术风格的简约墙砌，乍一看粗糙原始，仔细欣赏却别具风情；一楼原木质长桌配合窗外斜阳，清新和煦，二楼有致地放置着风格各异的桌椅摆件，一切看似简，却颇耐人寻味。艺术品般的餐舍设计，呈现创意品味的下午茶体验。\n",
+            "img_url": "https://image.ricebook.com/business/20462490423330",
+            "title": "动人的细节设计 打造精致品味的独栋小舍"
+          },
+          {
+            "content": "可选择在夏日饮用极佳的「玫瑰荔枝气泡水」与「白桃气泡水」搭配甜品，清爽回甘。全新下午茶组合，ENJOY 独享8折。",
+            "img_url": "https://image.ricebook.com/business/20462488723308",
+            "title": "全新招牌下午茶组合 ENJOY 独享8折"
+          }
+        ],
+        "text_array": [
+          "“亲爱的茉莉”与招牌精选 人气产品的集结回归",
+          "动人的细节设计 打造精致品味的独栋小舍",
+          "全新招牌下午茶组合 ENJOY 独享8折"
+        ]
+      },
+      "id": 4,
+      "index": 3
+    },
+    {
+      "compatibility_policy": {
+        "alert_message": "当前应用版本太低",
+        "policy": "alert"
+      },
+      "data": {
+        "contents": [
+          {
+            "text": "使用日期：2017.4.30-2017.7.30；"
+          },
+          {
+            "text": "使用时段：周一至周日，12:00-20:00； "
+          },
+          {
+            "text": "特别提示：公众假日及特殊节假日用餐，请提前致电商家； "
+          },
+          {
+            "text": "请提前1小时预约； "
+          },
+          {
+            "text": "本产品支持随时退款； "
+          },
+          {
+            "text": "如需开具发票，请具体咨询商户； "
+          },
+          {
+            "text": "如有疑问，请联系 ENJOY 客服。电话：4008-909-511；微信： enjoyricebook"
+          }
+        ],
+        "express": [],
+        "restaurant_phone_number": [
+          "010-64019980"
+        ]
+      },
+      "id": 9,
+      "index": 4
+    },
+    {
+      "compatibility_policy": {
+        "alert_message": "当前应用版本太低",
+        "policy": "alert"
+      },
+      "data": {
+        "recommend": [
+          {
+            "area_name": "安定门",
+            "distance": 0,
+            "enjoy_url": "enjoyapp://product/detail?id=1025787",
+            "origin_price": 13000,
+            "price": 11000,
+            "product_id": 1025787,
+            "product_image_url": "https://image.ricebook.com/business/19253038623123",
+            "product_name": "Tian 品双人甜品套餐",
+            "show_entity_name": "2位"
+          },
+          {
+            "area_name": "三里屯",
+            "distance": 0,
+            "enjoy_url": "enjoyapp://product/detail?id=1033571",
+            "origin_price": 9000,
+            "price": 6200,
+            "product_id": 1033571,
+            "product_image_url": "https://image.ricebook.com/business/20014914823827",
+            "product_name": "宇甜品（工体北路店）单人甜品套餐",
+            "show_entity_name": "位"
+          },
+          {
+            "area_name": "前门",
+            "distance": 0,
+            "enjoy_url": "enjoyapp://product/detail?id=1034338",
+            "origin_price": 58200,
+            "price": 48800,
+            "product_id": 1034338,
+            "product_image_url": "https://image.ricebook.com/business/20082728023734",
+            "product_name": "Capital M 米氏西餐厅四道式单人晚餐",
+            "show_entity_name": "位"
+          },
+          {
+            "area_name": "朝外大街",
+            "distance": 0,
+            "enjoy_url": "enjoyapp://product/detail?id=1034340",
+            "origin_price": 7100,
+            "price": 4900,
+            "product_id": 1034340,
+            "product_image_url": "https://image.ricebook.com/business/20082885023837",
+            "product_name": "DEAR-DEER（世贸天阶店）自提礼盒",
+            "show_entity_name": "2块"
+          },
+          {
+            "area_name": "三里屯",
+            "distance": 0,
+            "enjoy_url": "enjoyapp://product/detail?id=1031687",
+            "origin_price": 10600,
+            "price": 8800,
+            "product_id": 1031687,
+            "product_image_url": "https://image.ricebook.com/business/19902325023211",
+            "product_name": "布司蛋糕 Booth's Cake（工体店）芭菲套餐",
+            "show_entity_name": "位"
+          },
+          {
+            "area_name": "前门",
+            "distance": 0,
+            "enjoy_url": "enjoyapp://product/detail?id=1034834",
+            "origin_price": 25900,
+            "price": 16800,
+            "product_id": 1034834,
+            "product_image_url": "https://image.ricebook.com/business/20134377023578",
+            "product_name": "Meeting Someone双人下午茶",
+            "show_entity_name": "2位"
+          },
+          {
+            "area_name": "三里屯",
+            "distance": 0,
+            "enjoy_url": "enjoyapp://product/detail?id=1034316",
+            "origin_price": 32000,
+            "price": 18000,
+            "product_id": 1034316,
+            "product_image_url": "https://image.ricebook.com/business/20082412523684",
+            "product_name": "桥场居酒屋春季单人小会席",
+            "show_entity_name": "位"
+          },
+          {
+            "area_name": "三里屯",
+            "distance": 0,
+            "enjoy_url": "enjoyapp://product/detail?id=1031709",
+            "origin_price": 9600,
+            "price": 7800,
+            "product_id": 1031709,
+            "product_image_url": "https://image.ricebook.com/business/19909871423979",
+            "product_name": "布司蛋糕 Booth's Cake（工体店）软松饼套餐",
+            "show_entity_name": "位"
+          }
+        ]
+      },
+      "id": 12,
+      "index": 9999
+    }
+  ],
+  "basic": {
+    "description": "精选藏茶配新一季甜品",
+    "display_property_group": [],
+    "is_favorite": false,
+    "is_flash": false,
+    "left_count": 4986,
+    "max_count_per_order": 50,
+    "min_count_per_order": 1,
+    "name": "To My Dearest 法式甜品下午茶套餐",
+    "offline_time": 1501430340000,
+    "origin_price": 17000,
+    "price": 13600,
+    "product_id": 1037410,
+    "product_images": [
+      {
+        "img_url": "https://image.ricebook.com/business/20462478223307",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/20462478223322",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/20462478423329",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/20462478223321",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/20462478423328",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/20462478523331",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/20462478323328",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/20462478323327",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/20462474723341",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/20055964323680",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/18698183113032",
+        "special_show": false
+      },
+      {
+        "img_url": "https://image.ricebook.com/business/18698183123290",
+        "special_show": false
+      }
+    ],
+    "product_type": 0,
+    "refund_type": 2,
+    "sell_begin_time": 1493481600000,
+    "sell_end_time": 1501430340000,
+    "sell_state": 1,
+    "server_time": 1494213634086,
+    "share_info": {
+      "sub_title": "分享赢礼券",
+      "text": "好友从你分享的链接注册 ENJOY 并消费，\n你可获得价值 50 元礼券，多邀多得。"
+    },
+    "shelving_time": 1493424000000,
+    "short_name": "To My Dearest 法式甜品下午茶套餐",
+    "show_entity_name": "份",
+    "spec": "下午茶套餐",
+    "spec_name": "规格",
+    "sub_product_array": [
+      {
+        "is_flash": false,
+        "is_promotion": false,
+        "name": "To My Dearest 法式甜品下午茶套餐",
+        "origin_price": 17000,
+        "pass_info": [],
+        "price": 13600,
+        "sell_state": 1,
+        "show_entity_name": "份",
+        "spec": "下午茶套餐",
+        "sub_product_id": 5078786
+      }
+    ],
+    "sub_product_id": 5078786
+  }
+}
