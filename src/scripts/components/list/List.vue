@@ -1,6 +1,6 @@
 <template>
   <div class="m-list">
-    <header>aaaa</header>
+    <Header />
 
     <section v-if="list">
       <div class="list" infinite-scroll-disabled="loadMoreBusy" infinite-scroll-distance="200" infinite-scroll-immediate-check="false">
@@ -48,13 +48,15 @@
       </div>
     </section>
 
-    <nav></nav>
+    <Nav />
   </div>
 </template>
 
 <script>
 
 import utilAxios from '../../utils/axios'
+import Header from '../Header.vue'
+import Nav from '../Nav.vue'
 export default {
   data(){
     return {
