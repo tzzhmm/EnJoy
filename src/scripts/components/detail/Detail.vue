@@ -67,7 +67,7 @@
                   <span class="yo-ico">&#xe61d;</span>
 
                   <span class="value">{{detail.restaurant_phone_numbers[0]?detail.restaurant_phone_numbers[0]:null}}</span>
-                  <span class="value">{{detail.restaurant_phone_numbers[0]}}</span>
+                  <!-- <span class="value">{{detail.restaurant_phone_numbers[0]}}</span> -->
 
                 </li>
               </ul>

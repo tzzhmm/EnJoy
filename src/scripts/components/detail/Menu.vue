@@ -1,5 +1,5 @@
 <template id="">
-  <div id="menu">
+  <div id="menu" v-if="menu">
     <h3 class="card-title">MENU</h3>
     <div class="menu-list" v-for="(item1,index) in menu" :key="index">
       <div class="menu-item clearfix">
@@ -25,7 +25,7 @@ import Vue from 'vue'
         let that = this
 
         utilAxios.get({
-          url:`/api/product/info/product_detail.json?product_id=${this.$route.params.id}`,
+          url:`/api/product/info/product_detail.json?product_id=${this.$route.params.type}`,
 
           method:'get',
           callback:function(res){

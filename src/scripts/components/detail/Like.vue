@@ -1,5 +1,5 @@
 <template id="">
-  <div class="two-col">
+  <div class="two-col" v-if="like">
       <h3 class="card-title">
           猜你喜欢
       </h3>
@@ -33,7 +33,7 @@ import Vue from 'vue'
       mounted:function (){
         let that = this
         utilAxios.get({
-          url:`/api/product/info/product_detail.json?product_id=${this.$route.params.id}`,
+          url:`/api/product/info/product_detail.json?product_id=${this.$route.params.type}`,
           method:'get',
           callback:function(res){
             console.log(res.data.modules[4].data.recommend)

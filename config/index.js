@@ -37,7 +37,7 @@ module.exports = {
       },
       '/mock': {
         target: 'http://localhost:9000',
-        changeOrigin: true,setting
+        changeOrigin: true,
         pathRewrite: {
           '^/mock': ''
         }

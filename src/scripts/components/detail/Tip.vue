@@ -1,5 +1,5 @@
 <template id="">
-<div id="tips">
+<div id="tips" v-if="tip">
     <h3 class="card-title">使用提示</h3>
     <ul class="tips-list">
         <li v-for="(item,index) in tip" :key="index">
@@ -32,9 +32,10 @@ import Vue from 'vue'
         }
       },
       mounted:function (){
+        console.log(this.$route.params.id)
         let that = this
         utilAxios.get({
-          url:`/api/product/info/product_detail.json?product_id=${this.$route.params.id}`,
+          url:`/api/product/info/product_detail.json?product_id=${this.$route.params.type}`,
           method:'get',
           callback:function(res){
             console.log(res.data.modules[3].data.contents)
