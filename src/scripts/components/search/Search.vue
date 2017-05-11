@@ -11,7 +11,7 @@
         </div>
 
              <div class="select">
-                <div class="active" @click="change"  v-model="">本地服务</div>
+                <div class="active">本地服务</div>
                 <div>全国送</div>
             </div>
             <div class="tips">
@@ -57,15 +57,11 @@ Vue.component(TabItem.name, TabItem);
       return{
         keywords:'',
         list:[],
-        isShow:false,
-        cityId:''
+        isShow:false
         // popupVisible:false
       }
     },
     methods:{
-        change:function(){
-
-        },
         search:function(){
           let that = this
           let type = that.$route.params.type
@@ -75,6 +71,7 @@ Vue.component(TabItem.name, TabItem);
           });
 
           utilAxios.get({
+
             // /api/product/info/product_detail.json?product_id=1037410'
             url:`/api/3/enjoy_product/search.json?city_id=140&keyword=${this.keywords}&page=0`,
             method:'get',
