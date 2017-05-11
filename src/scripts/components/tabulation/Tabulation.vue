@@ -78,7 +78,7 @@
                 <div class="">
 
                 </div>
-                <mt-tab-container v-model="active">
+                <!-- <mt-tab-container v-model="active">
                     <mt-tab-container-item id="tab-container1">
                         <mt-cell title="tab-container 1"></mt-cell>
                     </mt-tab-container-item>
@@ -88,7 +88,7 @@
                     <mt-tab-container-item id="tab-container3">
                         <mt-cell title="tab-container 3"></mt-cell>
                     </mt-tab-container-item>
-                </mt-tab-container>
+                </mt-tab-container> -->
 
             </div>  <!--section-->
         </div>
