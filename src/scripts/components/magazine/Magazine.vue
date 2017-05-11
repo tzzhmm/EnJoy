@@ -1,6 +1,6 @@
 <template>
-  <div class="m-tabulation">
-    <header>tabulation</header>
+  <div class="m-magazine">
+    <header>magazine</header>
 
     <section></section>
 

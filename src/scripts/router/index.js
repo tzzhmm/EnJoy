@@ -2,10 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/scripts/components/Index.vue'
 import Home from '@/scripts/components/home/Home.vue'
+import Tabulation from '@/scripts/components/tabulation/Tabulation.vue'
+import Magazine from '@/scripts/components/magazine/Magazine.vue'
+import Shopping from '@/scripts/components/shopping/Shopping.vue'
+import Login from '@/scripts/components/my/Login.vue'
 import List from '@/scripts/components/list/List.vue'
 import Detail from '@/scripts/components/detail/Detail.vue'
-import Login from '@/scripts/components/my/Login.vue'
-import Tabulation from '@/scripts/components/tabulation/Tabulation.vue'
 import Search from '@/scripts/components/search/Search.vue'
 
 
@@ -26,6 +28,14 @@ export default new Router({
             {
         		path:'/Tabulation',
         		component: Tabulation
+            },
+            {
+        		path:'/Magazine',
+        		component: Magazine
+            },
+            {
+        		path:'/Shopping',
+        		component: Shopping
             }
 
       	]

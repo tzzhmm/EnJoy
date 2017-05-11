@@ -5,13 +5,13 @@
       <!-- <mt-popup
         v-model="popupVisible" closeOnClickModal="true"
         position="top"> -->
-        <div class="yo-search yo-search-a" style="display:none;">
+        <!-- <div class="yo-search yo-search-a" style="display:none;">
           <label class="action">
               <span class="yo-ico"></span>
               <input type="text" @keyup.enter="search" v-model="keywords" class="input input-shrink" placeholder="输入搜索关键字...">
           </label>
-        <span class="btn" @click="cancel">搜索</span>
-      </div>
+        <span class="btn" @click="cancel">搜索</span> -->
+      <!-- </div> -->
       <!-- </mt-popup> -->
 
         <div class="banner">
@@ -55,7 +55,7 @@
           <div class="panel-gap"></div>
         </div>
         <div>
-          <div id="express-menu">
+          <div id="express-menu" v-if="detail">
               <h3 class="card-title">商品详情</h3>
               <div class="title">{{detail.restaurant_name}}</div>
               <ul class="menu-table">
@@ -65,91 +65,29 @@
                 </li>
                 <li>
                   <span class="yo-ico">&#xe61d;</span>
-                  <span class="value">{{detail.restaurant_phone_numbers[0]}}</span>
+                  <span class="value">{{detail.restaurant_phone_numbers[0]?detail.restaurant_phone_numbers[0]:null}}</span>
                 </li>
               </ul>
           </div>
           <div class="panel-gap"></div>
         </div>
         <div>
-          <div id="menu">
-            <h3 class="card-title">MENU</h3>
-            <div class="menu-list" v-for="(item,index) in menu" :key="index">
-              <div class="menu-item clearfix">
-                <p class="sub-title">-{{item.sub_title}}-</p>
-                <p> {{item.text[0]}} </p>
-                <p> {{item.text[1]}} </p>
-                <p> {{item.text[2]}} </p>
-                <p> {{item.text[3]}} </p>
-                <p> {{item.text[4]}} </p>
-                <p> {{item.text[5]}} </p>
-              </div>
+          <Menu  />
 
-            </div>
-          </div>
-        <div class="panel-gap"></div>
+          <div class="panel-gap"></div>
       </div>
         <div product-type="1">
-            <div id="detail">
-                <h3 class="card-title">亮点</h3>
-                <div class="detail-item" v-for="(item,index) in light" :key="index">
-                    <img :src="item.img_url" alt="" style="width:3.35rem; height：2.23rem">
-                    <p class="sub-title">{{item.title}}</p>
-                    <p class="content">
-                        {{item.content}}
-                    </p>
-                </div>
+            <Light />
 
-            </div>
             <div class="panel-gap"></div>
         </div>
         <div>
-            <div id="tips">
-                <h3 class="card-title">使用提示</h3>
-                <ul class="tips-list">
-                    <li v-for="(item,index) in tip" :key="index">
-                        {{item.text}}
-                    </li>
+          <Tip  />
 
-                </ul>
-                <p class="fold">
-                    更多补充说明
-                    <span class="triangle-label">
-                        <span class="triangle down "style="border-width: .1rem .05rem .05rem; border-style: solid; border-color: black transparent transparent; border-image: initial;"></span>
-                    </span>
-                </p>
-                <div class="tips-wrapper">
-                    <a href="" class="tips-call">
-                        <span class="yo-ico lis">&#xe636;</span>
-                        联系客服
-                    </a>
-                </div>
-                <div class="modal-mask modal-transition" style="dislay:none;"></div>
-            </div>
             <div class="panel-gap"></div>
         </div>
         <div class="like">
-            <div class="two-col">
-                <h3 class="card-title">
-                    猜你喜欢
-                </h3>
-                <ul class="like-list">
-                    <li v-for="(item,index) in like" :key="index" id="item.product_id">
-                        <a href="/product/1032519" class="full-link"></a>
-                        <img :src="item.product_image_url" style="width:1.6rem; height:1.065rem;" alt="">
-                        <div class="desc">
-                            <p class="sub-title">{{item.product_name}}</p>
-                            <p class="price">
-                                <span>{{item.price/100}}
-                                  元/
-                                  位
-                                </span>
-                            </p>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
+          <Like  />
         </div>
     </section>
 
@@ -165,7 +103,6 @@
                 </a>
                 <a href="">
                   切换商品<span class="toggle-up"></span>
-
                 </a>
             </div>
             <div class="info fade-vertical-transition" style="display:none;"></div>
@@ -194,15 +131,21 @@
   Vue.component(Swipe.name,Swipe)
   Vue.component(SwipeItem.name,SwipeItem)
   import utilAxios from '../../utils/axios'
+  import Menu from './Menu.vue'
+  Vue.component('Menu',Menu)
+  import Light from './Light.vue'
+  Vue.component('Light',Light)
+  import Like from './Like.vue'
+  Vue.component('Like',Like)
+  import Tip from './Tip.vue'
+  Vue.component('Tip',Tip)
   export default {
     data(){
       return{
         dataSource:[],
         dataF:null,
         detail:'',
-        menu:[],
-        light:[],
-        tip:[],
+        // tip:[],
         like:[],
         popupVisible:''
       }
@@ -216,15 +159,14 @@
         // url:"https://api.ricebook.com/product/info/product_detail.json?product_id=1003137",
         method:'get',
         callback:function(res){
-          // console.log(res.data.modules)
-          console.log(res.data.modules[4].data.recommend)
+
           that.dataSource = that.dataSource.concat(res.data.basic.product_images);
           that.dataF =res.data.basic;
           that.detail=res.data.modules[0].data.restaurants[0];
-          that.menu= res.data.modules[1].data.contents;
-          that.light = res.data.modules[2].data.lights;
-          that.tip = res.data.modules[3].data.contents;
-          that.like = res.data.modules[4].data.recommend
+          // that.menu= res.data.modules[1].data.contents;
+          // that.light = res.data.modules[2].data.lights;
+          // that.tip = res.data.modules[3].data.contents;
+          // that.like = res.data.modules[4].data.recommend
         }
       })
     }
