@@ -75,7 +75,6 @@ Vue.component(TabItem.name, TabItem);
           });
 
           utilAxios.get({
-
             // /api/product/info/product_detail.json?product_id=1037410'
             url:`/api/3/enjoy_product/search.json?city_id=140&keyword=${this.keywords}&page=0`,
             method:'get',
