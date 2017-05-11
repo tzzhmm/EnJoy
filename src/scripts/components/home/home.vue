@@ -56,7 +56,7 @@
                     <div class="activity">本周上架10款精品，10款新品</div>
                     <div class="more">查看更多</div>
                     <ul>
-                        <router-link tag="li" :key="index" v-for="(item,index) in dataAlcohol"  :to="`/Detail/${item.id}`" >
+                        <router-link tag="li" :key="index" v-for="(item,index) in dataAlcohol"  :to="`Detail/${ /id=(\d{7})/.exec(item.enjoy_url)[1]}`" >
                             <img lazy="loaded" :src="item.url"/>
                         </router-link>
                     </ul>
@@ -119,11 +119,14 @@
         },
         mounted:function(){
             let that = this
+            
             utilAxios.get({
                 url:'/api/hub/home/v1/web/explore.json?city_id=140',
                 method:'get',
+                // /id=\d{7}/.exec('jsljflid=1234567kshfkshk')
+                // /id=(\d{7})/.exec('jslfjid=1234567lsjfl')
                 callback:function(res){
-                    console.log(res.data[2].data.tabs)
+                    console.log(res.data[2].data.tabs[0].enjoy_url)
                     that.dataSwiper = that.dataSwiper.concat(res.data[0].data.tabs),
                     // that.dataRestaurant = that.dataRestaurant.concat(res.data[1].data.tabs)
                     that.dataAlcohol = that.dataAlcohol.concat(res.data[2].data.tabs),

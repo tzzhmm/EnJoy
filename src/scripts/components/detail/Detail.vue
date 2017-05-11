@@ -25,9 +25,9 @@
           <div class="info">
               <div class="info-title">
                   <p class="title">
-                    {{dataF.name}}
+                    {{dataF?dataF.name:null}}
                   </p>
-                  <p class="desc">{{dataF.description}}</p>
+                  <p class="desc">{{dataF?dataF.description:null}}</p>
                   <p class="price">
                     <span class="r-price">{{dataF.price/100}}</span>
                     <span class="unit">元</span>
@@ -65,7 +65,10 @@
                 </li>
                 <li>
                   <span class="yo-ico">&#xe61d;</span>
+
                   <span class="value">{{detail.restaurant_phone_numbers[0]?detail.restaurant_phone_numbers[0]:null}}</span>
+                  <span class="value">{{detail.restaurant_phone_numbers[0]}}</span>
+
                 </li>
               </ul>
           </div>
@@ -152,10 +155,11 @@
     },
     mounted:function(){
       let that = this
-
+    //   console.log(1)
+    let type = that.$route.params.type
       utilAxios.get({
 
-        url:`/api/product/info/product_detail.json?product_id=${this.$route.params.id}`,
+        url:`/api/product/info/product_detail.json?product_id=${that.$route.params.type}`,
         // url:"https://api.ricebook.com/product/info/product_detail.json?product_id=1003137",
         method:'get',
         callback:function(res){

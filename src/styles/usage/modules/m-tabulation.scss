@@ -1,0 +1,171 @@
+// @import "../fragment/yo-search";
+// @include yo-search(
+//   $name: a,
+//   $cancel-color: #333
+// ){
+//   top:0rem;
+//   height: .44rem !important;
+//   padding-bottom:.2rem;
+//   background: #fff;
+//   @include border(0 0 1px 0 ,#ccc,solid);
+//   .action{
+//       input{
+//           background: #f0f0f0 !important;
+//       }
+//   }
+// };
+
+.tabulation{
+    width:100%;
+    @include flexbox();
+    @include flex-direction(cloumn);
+    display: inline-block;
+    .m-tabulation{
+        width:100%;
+        height:100%;
+        display: inline-block;
+        .tabulation_inp{
+            width:100%;
+            height:.44rem;
+            .search{
+                width:100%;
+                height:100%;
+                display: inline-block;
+                padding:.09rem .15rem .09rem .15rem;
+                @include border(0 0 1px 0, #ccc,solid);
+                background: #fff;
+                position: relative;
+                input{
+                    width: 100%;
+                    height:100%;
+                    padding-left:.28rem;
+                    background: #f0f0f0;
+                    border: 0 none;
+                    border-radius: 0.05rem;
+                }
+                b{
+                    position: absolute;
+                    top:.14rem;
+                    left:.2rem;
+                    color:#ccc;
+                }
+            }
+        }
+    }
+    .tabulation_t{
+        @include flex();
+        width: 100%;
+        display: inline-block;
+        .tabulation_nav{
+            width:25%;
+            height:100%;
+            display: inline-block;
+            .navtitle{
+                width:100%;
+                height:.5rem;
+                // background: yellow;
+                h1{
+                    width:100%;
+                    height:100%;
+                    text-align: center;
+                    line-height: .5rem;
+                    font-size: .18rem;
+                }
+            }
+            .navbar{
+                width:100%;
+                height:100%;
+                // background: yellow;
+                ul{
+                    width:100%;
+                    height:100%;
+                    li{
+                        width:100%;
+                        height:100%;
+                        text-align: center;
+                        line-height: .5rem;
+                        font-size: .14rem;
+                    }
+                }
+            }
+        }
+        .tabulation_section{
+            width:75%;
+            height:100%;
+            padding:0 .15rem;
+            float: right;
+            margin-top:.15rem;
+            .tabulation_section_zt{
+                width:100%;
+                .section_zt_title{
+                    width:100%;
+                    height:.5rem;
+                    line-height: .5rem;
+                    font-size: .14rem;
+                    display: inline-block;
+                }
+                .section_zt_list{
+                    width:100%;
+                    height:.76rem;
+                    @include flexbox();
+                    img{
+                        width:100%;
+                        @include flex();
+                    }
+                    .img_r{
+                        margin-left:.1rem;
+                    }
+                    .img_c{
+                        margin:0 .1rem;
+                    }
+                }
+            }
+            .tabulation_section_fl{
+                width:100%;
+                height:100%;
+                .section_fl_title{
+                    width:100%;
+                    height:.5rem;
+                    line-height: .5rem;
+                    font-size: .14rem;
+                    display: inline-block;
+                }
+                .section_fl_list{
+                    width:100%;
+                    height:100%;
+                    padding-bottom:.1rem;
+                    @include border(0 0 1px 0,#ccc,solid);
+                    ul{
+                        width:100%;
+                        height:100%;
+                        @include flexbox();
+                        li{
+                            @include flex();
+                            width:100%;
+                            height:100%;
+                            img{
+                                // width:.7rem;
+                                // height:.75rem;
+                                width:100%;
+                                height:100%;
+                                text-align: center;
+                            }
+                            span{
+                                width:100%;
+                                text-align: center;
+                                display: inline-block;
+                                margin-top:.1rem;
+                            }
+                        }
+                    }
+                    .mt{
+                        margin-top:.1rem;
+                    }
+                }
+            }
+
+
+        }
+    }
+
+}
