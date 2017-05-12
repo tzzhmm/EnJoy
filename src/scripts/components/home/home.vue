@@ -74,7 +74,7 @@
                         <!-- <li v-for="(item,index) in dataFoot" :key="index">
                             <img lazy="loaded" :src="item.url"/>
                         </li> -->
-                        <router-link tag="li" :key="index" v-for="(item,index) in dataAlcohol"  :to="`Detail/${ /id=(\d{7})/.exec(item.enjoy_url)[1]}`" >
+                        <router-link tag="li" :key="index" v-for="(item,index) in dataFoot"  :to="`Detail/${ /id=(\d{7})/.exec(item.enjoy_url)[1]}`" >
                             <img lazy="loaded" :src="item.url"/>
                         </router-link>
                     </ul>
@@ -92,7 +92,7 @@
                         <!-- <li v-for="(item,index) in dataThing" :key="index">
                             <img lazy="loaded" :src="item.url"/>
                         </li> -->
-                        <router-link tag="li" :key="index" v-for="(item,index) in dataAlcohol"  :to="`Detail/${ /id=(\d{7})/.exec(item.enjoy_url)[1]}`" >
+                        <router-link tag="li" :key="index" v-for="(item,index) in dataThing"  :to="`Detail/${ /id=(\d{7})/.exec(item.enjoy_url)[1]}`" >
                             <img lazy="loaded" :src="item.url"/>
                         </router-link>
                     </ul>
