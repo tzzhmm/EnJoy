@@ -31,8 +31,8 @@ export default new Router({
         		component: Tabulation
             },
             {
-        		path:'/Magazine',
-        		component: Magazine
+        		path:'/List',
+        		component: List
             },
             {
         		path:'/Shopping',
@@ -51,8 +51,8 @@ export default new Router({
       component:User
     },
     {
-		path:'/List',
-		component: List
+		path:'/Magazine',
+		component: Magazine
     },
     {
     	path:'/Detail/:type',
