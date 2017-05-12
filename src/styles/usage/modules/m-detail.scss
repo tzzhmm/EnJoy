@@ -1,5 +1,5 @@
 @import "../fragment/yo-search";
-
+@import "../element/yo-badge";
 @include yo-search(
   $name: a,
   $cancel-color: #333,
@@ -376,17 +376,7 @@ ul{
             }
           }
         }
-        // .modal-mask{
-        //   position:fixed;
-        //   z-index:9998;
-        //   left:0;
-        //   top:0;
-        //   width:100%;
-        //   height:100%;
-        //   background-color:rgba(0,0,0,.5);
-        //   display:table;
-        //   transition:opacity .3s ease;
-        // }
+
       }
       .panel-gap{
         width:100%;
@@ -537,6 +527,14 @@ ul{
         width:.75rem;
         line-height:.6rem;
         text-align:center;
+        @include yo-badge(
+          $name: b,
+          $font-size: .03rem
+        ){
+          position:absolute;
+          left:.42rem;
+          top:.18rem;
+        }
         span{
           font-size:.25rem;
         }
