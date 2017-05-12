@@ -29,7 +29,7 @@ import Vue from 'vue'
 
           method:'get',
           callback:function(res){
-            // console.log(res.data.modules[1].data.contents)
+            
             that.menu= res.data.modules[1].data.contents
           }
         })
