@@ -51,50 +51,45 @@
                 }
             }
         }
-    }
-    .tabulation_t{
-        @include flex();
-        width: 100%;
-        display: inline-block;
-        .tabulation_nav{
-            width:25%;
-            height:100%;
-            display: inline-block;
-            .navtitle{
-                width:100%;
-                height:.5rem;
-                // background: yellow;
-                h1{
-                    width:100%;
-                    height:100%;
-                    text-align: center;
-                    line-height: .5rem;
-                    font-size: .18rem;
-                }
-            }
-            .navbar{
-                width:100%;
-                height:100%;
-                // background: yellow;
-                ul{
-                    width:100%;
-                    height:100%;
-                    li{
-                        width:100%;
-                        height:100%;
-                        text-align: center;
-                        line-height: .5rem;
-                        font-size: .14rem;
-                    }
+    }  // m-tabulation
+
+    .el-tabs{
+        // @include flex();
+        @include flexbox();
+        height: 100%;
+        .el-tabs__header{
+            height: 100%;
+            background: #eee;
+            @include flex();
+            .el-tabs__nav-wrap{
+                height: 100%;
+                width: 100%;
+                .el-tabs__nav-scroll{
+                    height: 100%;
+                    width: 100%;
+                    .el-tabs__nav{
+                        height: 100%;
+                        width: 100%;
+                        .el-tabs__item{
+                            line-height: .46rem;
+                            text-align: center;
+                        }
+                        .el-tabs__item.is-active{
+                            font-size:.16rem;
+                            border-right: none;
+                            background: #fff;
+                            color: #000;
+                            font-weight: 600;
+                        }
+                     }
                 }
             }
         }
-        .tabulation_section{
-            width:75%;
-            height:100%;
-            padding:0 .15rem;
-            float: right;
-            margin-top:.15rem;
+        .el-tabs__content{
+            @include flex(3);
+            height: 100%;;
+            margin: .10rem;
+            overflow-y:scroll;
             .tabulation_section_zt{
                 width:100%;
                 .section_zt_title{
@@ -134,7 +129,7 @@
                     width:100%;
                     height:100%;
                     padding-bottom:.1rem;
-                    @include border(0 0 1px 0,#ccc,solid);
+                    // @include border(0 0 1px 0,#ccc,solid);
                     ul{
                         width:100%;
                         height:100%;
@@ -163,9 +158,7 @@
                     }
                 }
             }
-
-
         }
     }
-
+    // e-tabs
 }

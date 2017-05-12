@@ -358,15 +358,16 @@
                 @include justify-content(center);
                 @include align-items(center);
                 color:#929292;
+                padding:.06rem 0;
                 span{
-                    height:.24rem;
+                    height:.2rem;
                     line-height: .24rem;
                     font-size: .2rem;
                 }
                 p{
                     font-size: .14rem;
                 }
-                &.yo-i{
+                &.active {
                     color:#000;
                 }
             }
