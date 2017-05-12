@@ -13,7 +13,6 @@
         <span class="btn" @click="cancel">搜索</span> -->
       <!-- </div> -->
       <!-- </mt-popup> -->
-
         <div class="banner">
               <mt-swipe :auto="2000">
                 <mt-swipe-item v-for="(item,index) in dataSource" :key="index">
@@ -65,10 +64,7 @@
                 </li>
                 <li>
                   <span class="yo-ico">&#xe61d;</span>
-
                   <span class="value">{{detail.restaurant_phone_numbers[0]?detail.restaurant_phone_numbers[0]:null}}</span>
-                  <!-- <span class="value">{{detail.restaurant_phone_numbers[0]}}</span> -->
-
                 </li>
               </ul>
           </div>
@@ -76,24 +72,20 @@
         </div>
         <div>
           <Menu  />
-
           <div class="panel-gap"></div>
       </div>
         <div product-type="1">
             <Light />
-
             <div class="panel-gap"></div>
         </div>
         <div>
           <Tip  />
-
             <div class="panel-gap"></div>
         </div>
         <div class="like">
           <Like  />
         </div>
     </section>
-
     <nav>
         <div class="sub-area">
             <div class="title">
@@ -114,15 +106,14 @@
             <a class="confirm fade-transition" style="display:none;">确定</a>
             <div class="cart fade-transition">
               <span class="yo-ico">&#xe608;</span>
-              <i class="tip"></i>
+              <i class="yo-badge yo-badge-b" v-modle="num">{{this.num}}</i>
             </div>
-            <a class="add-cart fade-transition on">加入购物车</a>
+            <a class="add-cart fade-transition on" @click="addCart" >加入购物车</a>
             <a class="fade-transition pay on">即刻购买</a>
         </div>
     </nav>
   </div>
 </template>
-
 <script>
   import Vue from 'vue'
   import Header from '../Header'
@@ -148,29 +139,64 @@
         dataSource:[],
         dataF:null,
         detail:'',
-        // tip:[],
+        num:0,
         like:[],
         popupVisible:''
       }
     },
+    methods:{
+      addCart:function(){
+        return this.num++;
+        // let id =  this.$route.params.type
+        //
+        // if(! localstorage.getItem("goods")){
+        //   var value = "[{id:"+id+",num:1}]"
+        //   localstorage.setItem("goods",value)
+        // }else{
+        //   //点击不同商品：
+        //   //判定购物车里有没有这个商品
+        //   var has = false;
+        //   var goods = eval(localstorage.getItem("goods"));
+        //   for(var i = 0;i < goods.length;i++){
+        //     if(goods[i].id == id){
+        //       has = true;
+        //       break;
+        //     }
+        //   }
+        //
+        //   if(has){
+        //     goods[i].num++;
+        //     localstorage.getItem("goods",JSON.stringify(goods));
+        //   }else{
+        //     var commodity = {id:id,num:1}
+        //     goods.push(commodity);
+        //     localstorage.getItem("goods",JSON.stringify(goods));
+        //   }
+        // }
+
+
+
+
+        // this.goodItem = {id : goods.id,  num:goods.num };
+        // var index = this.buyLists.findIndex((value,index,arr)=>{
+        //   return value.id === this.goodItem.id
+        // });
+        // index === -1 ? this.buyLists.push(this.goodItem) : Object.assign(this.buyLists[index],this.goodItem)
+        // console.log(buyLists)
+      }
+    },
     mounted:function(){
       let that = this
-    //   console.log(1)
-    let type = that.$route.params.type
+      let type = that.$route.params.type
       utilAxios.get({
-
         url:`/api/product/info/product_detail.json?product_id=${that.$route.params.type}`,
         // url:"https://api.ricebook.com/product/info/product_detail.json?product_id=1003137",
         method:'get',
         callback:function(res){
-
           that.dataSource = that.dataSource.concat(res.data.basic.product_images);
           that.dataF =res.data.basic;
           that.detail=res.data.modules[0].data.restaurants[0];
-          // that.menu= res.data.modules[1].data.contents;
-          // that.light = res.data.modules[2].data.lights;
-          // that.tip = res.data.modules[3].data.contents;
-          // that.like = res.data.modules[4].data.recommend
+
         }
       })
     }

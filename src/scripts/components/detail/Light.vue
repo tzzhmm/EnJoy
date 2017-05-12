@@ -27,7 +27,7 @@ import Vue from 'vue'
           url:`/api/product/info/product_detail.json?product_id=${this.$route.params.type}`,
           method:'get',
           callback:function(res){
-            // console.log(res.data.modules[1].data.contents)
+        
             that.light = res.data.modules[2].data.lights;
           }
         })

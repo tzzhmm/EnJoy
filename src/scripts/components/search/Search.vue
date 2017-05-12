@@ -11,8 +11,8 @@
         </div>
 
              <div class="select">
-                <div class="active">本地服务</div>
-                <div>全国送</div>
+                <router-link tag="div" class="active">本地服务</router-link>
+                <router-link tag="div">全国送</router-link>
             </div>
             <div class="tips">
                 <span>根据您的关键词<span>天</span>为您推荐以下商品</span>
@@ -41,10 +41,9 @@
     </div>
 </template>
 <script>
-import { Navbar, TabItem } from 'mint-ui';
-
-Vue.component(Navbar.name, Navbar);
-Vue.component(TabItem.name, TabItem);
+import { TabContainer, TabContainerItem } from 'mint-ui';
+Vue.component(TabContainer.name, TabContainer);
+Vue.component(TabContainerItem.name, TabContainerItem);
   import Header from '../Header'
   Vue.component('Header',Header)
   import Nav from '../Nav'

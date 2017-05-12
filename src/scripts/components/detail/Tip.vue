@@ -38,7 +38,7 @@ import Vue from 'vue'
           url:`/api/product/info/product_detail.json?product_id=${this.$route.params.type}`,
           method:'get',
           callback:function(res){
-            console.log(res.data.modules[3].data.contents)
+            
             that.tip = res.data.modules[3].data.contents;
           }
         })
