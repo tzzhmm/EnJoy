@@ -250,7 +250,7 @@
         // console.log(buyLists)
       }
     },
-    mounted:function(){
+    mounted:function(){`    `
       let that = this
       this.goodsId = that.$route.params.type
       utilAxios.get({
