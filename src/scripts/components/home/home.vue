@@ -4,7 +4,7 @@
             <div class="section_title_content">
                 <p class="title">今日推荐</p>
                 <p class="sub_title">每天告诉你大家爱吃的和最近值得吃的</p>
-                <div class="queue"><span>1</span>/8</div>
+                <!-- <div class="queue"><span>1</span>/8</div> -->
             </div>
             <div class="section_pic">
                 <mt-swipe :auto="0" :continuous="false">
@@ -71,9 +71,12 @@
                     <div class="activity">本周上架10款精品，10款新品</div>
                     <div class="more">查看更多</div>
                     <ul>
-                        <li v-for="(item,index) in dataFoot" :key="index">
+                        <!-- <li v-for="(item,index) in dataFoot" :key="index">
                             <img lazy="loaded" :src="item.url"/>
-                        </li>
+                        </li> -->
+                        <router-link tag="li" :key="index" v-for="(item,index) in dataAlcohol"  :to="`Detail/${ /id=(\d{7})/.exec(item.enjoy_url)[1]}`" >
+                            <img lazy="loaded" :src="item.url"/>
+                        </router-link>
                     </ul>
                 </div>
             </div>
@@ -86,9 +89,12 @@
                     <div class="activity">本周上架10款精品，10款新品</div>
                     <div class="more">查看更多</div>
                     <ul>
-                        <li v-for="(item,index) in dataThing" :key="index">
+                        <!-- <li v-for="(item,index) in dataThing" :key="index">
                             <img lazy="loaded" :src="item.url"/>
-                        </li>
+                        </li> -->
+                        <router-link tag="li" :key="index" v-for="(item,index) in dataAlcohol"  :to="`Detail/${ /id=(\d{7})/.exec(item.enjoy_url)[1]}`" >
+                            <img lazy="loaded" :src="item.url"/>
+                        </router-link>
                     </ul>
                 </div>
             </div>
@@ -119,7 +125,7 @@
         },
         mounted:function(){
             let that = this
-            
+
             utilAxios.get({
                 url:'/api/hub/home/v1/web/explore.json?city_id=140',
                 method:'get',
