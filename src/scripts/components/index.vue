@@ -15,7 +15,6 @@
     Vue.component('Header',Header)
     Vue.component('Nav',Nav)
     export default{
-
     }
 /*
     import axios from 'axios'

@@ -23,6 +23,7 @@
       width:100%;
       height:.4rem;
       @include flexbox();
+      @include justify-content(space-between);
       div{
         width:1.87rem;
         height:.43rem;
@@ -47,7 +48,7 @@
       background:#fff;
     }
     .search-list{
-      margin-top:.4rem;
+
       .search-cell{
         width:3.45rem;
         margin:0 auto;

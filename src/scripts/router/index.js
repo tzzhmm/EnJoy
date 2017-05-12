@@ -9,6 +9,7 @@ import Login from '@/scripts/components/my/Login.vue'
 import List from '@/scripts/components/list/List.vue'
 import Detail from '@/scripts/components/detail/Detail.vue'
 import Search from '@/scripts/components/search/Search.vue'
+import User from '@/scripts/components/my/User.vue'
 
 
 
@@ -20,7 +21,6 @@ export default new Router({
       	path: '/',
       	name: 'Index',
       	component: Index,
-        redirect:'/Home',
       	children: [
             {
                 path:'/Home',
@@ -38,23 +38,29 @@ export default new Router({
         		path:'/Shopping',
         		component: Shopping
             }
+
       	]
     },
     {
         path:'/Login',
         component: Login
+
+    },
+    {
+      path:'/User',
+      component:User
     },
     {
 		path:'/List',
 		component: List
     },
     {
-    	path:'/Detail/:id',
+    	path:'/Detail/:type',
 		  component: Detail
-  },
-  {
-    path:'/Search',
-    component:Search
-  }
-  ]
-})
+    },
+    {
+      path:'/Search',
+      component:Search
+    }
+    ]
+  })

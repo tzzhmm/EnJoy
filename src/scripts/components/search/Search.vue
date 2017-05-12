@@ -2,20 +2,21 @@
     <div class="m-search">
         <Header />
         <section>
-          <div class="yo-search yo-search-a">
+         <div class="yo-search yo-search-a" :show="isShow">
           <label class="action">
             <span class="yo-ico"></span>
             <input type="text" @keyup.enter="search" v-model="keywords" class="input input-shrink" placeholder="输入搜索关键字...">
           </label>
           <span class="cancel" @click="cancel">取消</span>
         </div>
-            <!-- <div class="select">
-                <div class="active">本地服务</div>
-                <div>全国送</div>
+
+             <div class="select">
+                <router-link tag="div" class="active">本地服务</router-link>
+                <router-link tag="div">全国送</router-link>
             </div>
             <div class="tips">
                 <span>根据您的关键词<span>天</span>为您推荐以下商品</span>
-            </div> -->
+            </div>
             <div class="search-list">
               <router-link :key="index" class="search-cell" :to="`/detail/${item.product_id}`" tag="div" v-for="(item,index) in list ">
                     <a href="#" class="full-link"></a>
@@ -40,6 +41,9 @@
     </div>
 </template>
 <script>
+import { TabContainer, TabContainerItem } from 'mint-ui';
+Vue.component(TabContainer.name, TabContainer);
+Vue.component(TabContainerItem.name, TabContainerItem);
   import Header from '../Header'
   Vue.component('Header',Header)
   import Nav from '../Nav'
@@ -51,7 +55,8 @@
     data(){
       return{
         keywords:'',
-        list:[]
+        list:[],
+        isShow:false
         // popupVisible:false
       }
     },
@@ -70,14 +75,16 @@
             url:`/api/3/enjoy_product/search.json?city_id=140&keyword=${this.keywords}&page=0`,
             method:'get',
             callback:function(res){
-              console.log(res)
+              // console.log(res)
               that.list = res.data.products
               Indicator.close()
             }
           })
+
       },
       cancel:function(){
         this.keywords =""
+        let that = this
       }
     }
   }
