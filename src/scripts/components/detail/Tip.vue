@@ -32,13 +32,11 @@ import Vue from 'vue'
         }
       },
       mounted:function (){
-        console.log(this.$route.params.id)
         let that = this
         utilAxios.get({
           url:`/api/product/info/product_detail.json?product_id=${this.$route.params.type}`,
           method:'get',
           callback:function(res){
-            
             that.tip = res.data.modules[3].data.contents;
           }
         })
