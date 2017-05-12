@@ -36,7 +36,7 @@
                     </span>
                     <span class="o-price">
                       ¥
-                      {{dataF.origin_price/100}}
+                      {{dataF.origin_price?dataF.origin_price/100:null}}
                     </span>
                     <span class="status">
                       <span class="gap"></span>
@@ -141,14 +141,38 @@
         detail:'',
         num:0,
         like:[],
-        popupVisible:''
+        popupVisible:'',
+        goodsId:'',
+        storage: {}
       }
     },
     methods:{
+      toOneObj: function(obj, newObj){
+        let res = {}
+        for(let key in obj){
+          res[key] =  obj[key]
+        }
+        for(let i in newObj){
+          res[i] =  newObj[i]
+        }
+        return res;
+      },
       addCart:function(){
-        return this.num++;
+        let obj = {};
+
+        // this.num = this.num++;
+        obj[this.goodsId] = ++this.num;
+
+        // console.log(this.num);
+        let a = this.toOneObj(this.storage, obj)
+
+        // let str = '"'+JSON.stringify(a)+'"'
+        let str = JSON.stringify(a)
+
+        localStorage.setItem("cartItems",str)
+        console.log(str);
+
         // let id =  this.$route.params.type
-        //
         // if(! localstorage.getItem("goods")){
         //   var value = "[{id:"+id+",num:1}]"
         //   localstorage.setItem("goods",value)
@@ -187,16 +211,16 @@
     },
     mounted:function(){
       let that = this
-      let type = that.$route.params.type
+      this.goodsId = that.$route.params.type
       utilAxios.get({
-        url:`/api/product/info/product_detail.json?product_id=${that.$route.params.type}`,
+        url:`/api/product/info/product_detail.json?product_id=${that.goodsId}`,
         // url:"https://api.ricebook.com/product/info/product_detail.json?product_id=1003137",
         method:'get',
         callback:function(res){
           that.dataSource = that.dataSource.concat(res.data.basic.product_images);
           that.dataF =res.data.basic;
           that.detail=res.data.modules[0].data.restaurants[0];
-
+          that.storage = JSON.parse(localStorage.getItem('cartItems'));
         }
       })
     }
