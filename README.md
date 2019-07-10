@@ -1,5 +1,7 @@
 # douban
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tzzhmm/EnJoy.svg)](https://greenkeeper.io/)
+
 > A Vue.js project
 
 ## Build Setup
